@@ -1,4 +1,9 @@
-#include "uvc_camera/deimos_cam.h"
+#ifdef _WIN32
+    #include "uvc_camera/deimos_cam_win.h"
+#endif
+#ifdef UNIX
+    #include "uvc_camera/deimos_cam_linux.h"
+#endif
 #include <opencv2/opencv.hpp>
 
 int main (int argc, char **argv)

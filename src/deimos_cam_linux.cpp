@@ -1,4 +1,3 @@
-#include <boost/thread.hpp>
 #include "uvc_cam/uvc_cam.h"
 #include "uvc_camera/deimos_cam.h"
 
@@ -32,11 +31,13 @@ deimosCamera::deimosCamera(std::string dev, bool threaded = false)
         int extFileLength;
 
         ok = true;
+		/*
         if (threaded)
         {
             //TODO how to read image data without effecting the thread (mutex?)
             image_thread = boost::thread(boost::bind(&deimosCamera::feedImages, this));
         }
+		*/
     }
 }
 
@@ -175,7 +176,7 @@ deimosCamera::~deimosCamera()
     if (isCameraStereo == true)
     {
         ok = false;
-        image_thread.join();
+        //image_thread.join();
         //DisableIMU();
 
         //Freeing the memory

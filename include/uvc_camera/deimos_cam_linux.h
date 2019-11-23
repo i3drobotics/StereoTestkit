@@ -1,5 +1,4 @@
 #include "uvc_cam/uvc_cam.h"
-#include <boost/thread.hpp>
 #include <libv4l2.h>
 #include <fstream>
 #include <yaml-cpp/yaml.h>
@@ -74,8 +73,8 @@ namespace uvc_camera {
 			boost::mutex time_mutex_;
 
 			uvc_cam::Cam *cam;
-			boost::thread image_thread;
-			boost::thread IMU_thread;
+			//boost::thread image_thread;
+			//boost::thread IMU_thread;
 			volatile float beta;	// 2 * proportional gain (Kp)
 			volatile float q0, q1, q2, q3;	// quaternion of sensor frame relative to auxiliary frame
 
