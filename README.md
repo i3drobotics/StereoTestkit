@@ -54,9 +54,31 @@ Build option:
 ### I3DR Stereo Matcher (SGM)
 **[#TODO]** 
 
+This libary has routine for generating 3D using I3DR Stereo Matcher algorithm.
+
 Build option:
 ```
 -DWITH_I3DR_STEREO=TRUE (Disabled by default)
+```
+### OpenCV Point Clouds
+**[#TODO]**
+
+This library has routines for manipulating point clouds using OpenCV's _3DImage datatype.
+
+Build option:
+```
+-DWITH_OPENCV_POINT_CLOUDS=TRUE (Disabled by default)
+```
+### PCL Point Clouds
+**[#TODO]**
+
+This library has routines for manipulating point clouds using Point Cloud Library datatype.
+
+(Currently incompatible with UcoSLAM)
+
+Build option:
+```
+-DWITH_PCL_POINT_CLOUDS=TRUE (Disabled by default)
 ```
 ### OpenCV Marker Detection
 **[#TODO]**
@@ -70,6 +92,8 @@ Build option:
 ### UcoSLAM
 This is a SLAM library for fast generation of location tracking using feature tracking. Additionally ArUco markers can be used to assist with tracking.
 
+Current issue with using this library with the Point Cloud Library (PCL)
+
 **[#TODO]** Build option:
 ```bash
 -DWITH_UCOSLAM=TRUE (Disabled by default)
@@ -77,7 +101,8 @@ This is a SLAM library for fast generation of location tracking using feature tr
 ### RTABMAP 
 **[#TODO]**
 
-This is a SLAM library 
+This is a SLAM library.
+
 Build option:
 ```bash
 -DWITH_RTABMAP=TRUE (Disabled by default)
