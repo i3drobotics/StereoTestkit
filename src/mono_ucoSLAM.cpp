@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     std::cout << "Output File: " << OutputMapFile << std::endl;
     std::cout << "=======================" << std::endl;
 
-    uvc_camera::deimosCamera camera("/dev/video0", false);
+    uvc_camera::deimosCamera camera("/dev/video0");
     if (camera.isCameraStereo == false)
     {
         std::cerr << "Stereo camera not found" << std::endl;

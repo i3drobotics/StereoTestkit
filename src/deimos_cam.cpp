@@ -1,10 +1,9 @@
-#include <boost/thread.hpp>
 #include "uvc_cam/uvc_cam.h"
 #include "uvc_camera/deimos_cam.h"
 
 namespace uvc_camera
 {
-deimosCamera::deimosCamera(std::string dev, bool threaded = false)
+deimosCamera::deimosCamera(std::string dev)
 {
     width = 752;
     height = 480;
@@ -32,11 +31,6 @@ deimosCamera::deimosCamera(std::string dev, bool threaded = false)
         int extFileLength;
 
         ok = true;
-        if (threaded)
-        {
-            //TODO how to read image data without effecting the thread (mutex?)
-            image_thread = boost::thread(boost::bind(&deimosCamera::feedImages, this));
-        }
     }
 }
 

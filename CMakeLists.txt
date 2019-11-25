@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 2.8.3)
 set (CMAKE_CXX_STANDARD 11)
 project(deimos_live)
 
-find_package(Boost REQUIRED COMPONENTS thread system)
-
 find_package(OpenCV REQUIRED)
 
 find_package(PCL 1.7 REQUIRED)
@@ -84,7 +82,7 @@ add_executable(mono_ucoSLAM src/mono_ucoSLAM.cpp
 
 target_link_libraries(
 	deimos_live 
-	${Boost_LIBRARIES} xunitTara 
+	xunitTara 
 	${GLIB2_LIBRARIES} -lv4l2 -lyaml-cpp -ludev -lglib-2.0 
 	${OpenCV_LIBRARIES}
 	${PCL_LIBRARIES}
@@ -92,7 +90,7 @@ target_link_libraries(
 
 target_link_libraries(
 	mono_ucoSLAM 
-	${Boost_LIBRARIES} xunitTara 
+	xunitTara 
 	${GLIB2_LIBRARIES} -lv4l2 -lyaml-cpp -ludev -lglib-2.0 
 	${OpenCV_LIBRARIES}
 	${ucoslam_LIBS}
@@ -101,7 +99,7 @@ target_link_libraries(
 
 target_link_libraries(
 	deimos_ucoSLAM 
-	${Boost_LIBRARIES} xunitTara 
+	xunitTara 
 	${GLIB2_LIBRARIES} -lv4l2 -lyaml-cpp -ludev -lglib-2.0 
 	${OpenCV_LIBRARIES}
 	${ucoslam_LIBS}
