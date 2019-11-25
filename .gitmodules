@@ -1,0 +1,3 @@
+[submodule "ucoslam"]
+	path = 3rd_party/ucoslam
+	url = https://github.com/lambdaloop/ucoslam-cv3.git
